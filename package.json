@@ -1,0 +1,42 @@
+{
+  "name": "tool-search-bedrock-mcp",
+  "version": "1.0.0",
+  "description": "MCP proxy that reduces context usage via Bedrock tool search",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "tool-search-bedrock-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "proxy-config.json"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "claude",
+    "bedrock",
+    "tools"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olaservo/claude-tool-search-with-bedrock.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@aws-sdk/client-bedrock-runtime": "^3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "tsx": "^4.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
