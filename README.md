@@ -45,8 +45,11 @@ Configure backend MCP servers to proxy:
       "type": "http"
     },
     "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"]
+      "url": "https://api.githubcopilot.com/mcp/",
+      "type": "http",
+      "headers": {
+        "Authorization": "Bearer ${GITHUB_PAT}"
+      }
     }
   }
 }
@@ -104,4 +107,5 @@ Execute a discovered tool:
 | `PROXY_CONFIG` | `./proxy-config.json` | Path to backend config |
 | `AWS_REGION` | `us-west-2` | AWS region for Bedrock |
 | `AWS_PROFILE` | `claude_code` | AWS credentials profile |
+| `BEDROCK_MODEL_ID` | `global.anthropic.claude-opus-4-5-20251101-v1:0` | Bedrock model ID for tool search |
 | `GITHUB_PAT` | - | GitHub personal access token for GitHub MCP backend (optional for demo) |
